@@ -1,0 +1,11 @@
+.tab {
+    color: black;
+    padding-bottom: 16px;
+    cursor: pointer;
+}
+
+.activeTab {
+    color: green;
+    cursor: pointer;
+    border-bottom: 1px solid green;
+}
