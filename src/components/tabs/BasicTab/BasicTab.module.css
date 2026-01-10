@@ -1,0 +1,29 @@
+.tabsWrapper {
+  display: flex;
+  flex: 1;
+}
+
+.tabsWrapper li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.style1 {
+  color: black;
+  overflow: auto;
+  font-weight: 600;
+  font-size: 16px;
+  flex: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+  gap: 24px;
+}
+
+.style1 li {
+  padding: 0px 0px 16px;
+  min-width: 80px;
+}
+
+.activeTab {
+  color: var(--brand-500);
+  border-bottom: 1px solid currentColor;
+}
