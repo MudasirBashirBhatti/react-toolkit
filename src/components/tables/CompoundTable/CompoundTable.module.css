@@ -1,0 +1,63 @@
+.tableWrapper {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: auto;
+    height: max-content;
+}
+
+.tableHead {
+    width: 100%;
+}
+
+.tableRow {
+    transition: background 0.3s ease;
+}
+
+.th {
+    text-align: left;
+}
+
+.tr {
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    .tableHead {
+        display: none;
+    }
+
+    .tableRow {
+        display: block;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    /* Table cells stack and show label/value */
+    .td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    /* Add label before value */
+    .td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: max-content;
+        padding-right: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /* Last cell spacing */
+    .td:last-child {
+        margin-bottom: 24px;
+    }
+
+    /* First cell adjustments */
+    .td:nth-child(1) {
+        padding-left: 0px;
+    }
+}
