@@ -1,0 +1,87 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.select:disabled {
+  cursor: not-allowed;
+  background: #f5f5f5;
+}
+
+.chevron {
+  margin-left: 8px;
+}
+
+.menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  background: #fff;
+  z-index: 10;
+
+  /* animation start state */
+  opacity: 0;
+  transform: translateY(-6px);
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
+}
+
+.menuOpen {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.option {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #f0f0f0;
+}
+
+.active {
+  background: #e6e6e6;
+}
+
+.focused {
+  background: #dbeafe;
+}
+
+.disabled .select {
+  opacity: 0.6;
+}
+
+.error .select {
+  border-color: #e53935;
+}
+
+.errorText {
+  color: #e53935;
+  font-size: 12px;
+}

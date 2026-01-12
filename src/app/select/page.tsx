@@ -1,21 +1,21 @@
 "use client";
-import Select from "@/components/selects/Select/Select";
+import { CustomDropdown } from "@/components/selects/CustomDropdown/CustomDropdown";
 import { useState } from "react";
 
 const SelectPage = () => {
-  const [value, setvalue] = useState("");
+  const [selectedOpt, setselectedOpt] = useState("");
   return (
     <div>
-      <Select
-        label="This is label"
-        onChange={(val) => {
-          setvalue(val);
-        }}
-        options={[
-          { label: "this is label1", value: "val1" },
-          { label: "this is label2", value: "val2" },
+      <CustomDropdown
+        ariaLabel="Select Country"
+        dataArray={[
+          { title: "Pakistan", value: "pakistan" },
+          { title: "India", value: "india" },
         ]}
-        value={value}
+        label="This is label"
+        placeholder="Please select your country"
+        value={selectedOpt}
+        onChange={(data) => setselectedOpt(data.value)}
       />
     </div>
   );
