@@ -1,4 +1,4 @@
-.faq {
+.accordion {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 0px;
+  gap: 0;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.027);
   border-radius: 8px;
@@ -40,12 +40,12 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-/* Optional heading inside question */
+/* Heading text inside question */
 .heading {
   flex: 1;
 }
 
-/* Icon (+/-) */
+/* Icon */
 .icon {
   margin-left: auto;
   display: flex;
@@ -63,7 +63,7 @@
   color: var(--gray-800);
 }
 
-/* active states */
+/* Active state */
 .active.item {
   gap: 10px;
   border: 1px solid rgba(0, 0, 0, 0.144);
