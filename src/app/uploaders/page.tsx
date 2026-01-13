@@ -20,6 +20,10 @@ const FileUploadersPage = () => {
         name="attachedFile"
         accept={["image/jpeg", "image/png"]}
         onChange={addFiles}
+        maxFiles={3}
+        fileSize={0.6} //file size in mb
+        currentFiles={files}
+        multiple
       >
         <Uploader.Basic label="Upload the file here" />
       </Uploader>
