@@ -36,6 +36,8 @@ const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
           disabled={disabled}
           onChange={handleChange}
           className={styles.input}
+          aria-checked={value}
+          aria-disabled={disabled}
         />
         <span className={styles.slider} />
       </label>
