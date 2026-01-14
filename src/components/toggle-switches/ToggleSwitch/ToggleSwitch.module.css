@@ -1,0 +1,81 @@
+.switch {
+  /* customizable variables */
+  --width: 36px;
+  --height: 20px;
+  --thumb-size: 16px;
+  --active-color: rgb(0, 140, 255);
+  --inactive-color: rgba(0, 0, 0, 0.15);
+
+  position: relative;
+  display: inline-block;
+  width: var(--width);
+  height: var(--height);
+}
+
+/* hide input but keep it accessible */
+.input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* slider */
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+
+  background-color: var(--inactive-color);
+  border-radius: 999px;
+  transition: background-color 0.25s ease;
+}
+
+/* thumb */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease;
+}
+
+/* checked state */
+.input:checked+.slider {
+  background-color: var(--active-color);
+}
+
+.input:checked+.slider::before {
+  transform: translate(calc(var(--width) - var(--thumb-size) - 4px),
+      -50%);
+}
+
+.input:disabled+.slider {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* focus (keyboard) */
+.input:focus-visible+.slider {
+  outline: 2px solid rgba(0, 140, 255, 0.6);
+  outline-offset: 2px;
+}
+
+
+
+/* disabled */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled .slider {
+  cursor: not-allowed;
+}
