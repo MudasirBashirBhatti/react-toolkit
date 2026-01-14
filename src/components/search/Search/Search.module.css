@@ -1,0 +1,85 @@
+.search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    padding: 8px 12px;
+    gap: 8px;
+
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* focus handling */
+.search:focus-within {
+    border-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* disabled wrapper */
+.search:has(input:disabled) {
+    background: rgba(0, 0, 0, 0.03);
+    cursor: not-allowed;
+}
+
+/* search icon */
+.icon {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    flex-shrink: 0;
+}
+
+/* input field */
+.input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/* placeholder */
+.input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* disabled input */
+.input:disabled {
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* clear button */
+.clear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+}
+
+/* hover & focus for clear */
+.clear:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.clear:focus-visible {
+    outline: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+/* disabled clear button */
+.clear:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
