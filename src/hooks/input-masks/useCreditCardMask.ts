@@ -42,6 +42,7 @@ export function useCreditCardMask(options: {
   return useInputMask({
     ...options,
     allowedChars: /[0-9]/, // Only digits are allowed
+    maxLength: 16,
     formatter: (val) => {
       // Remove non-digit characters and limit to 16 digits
       const numbers = val.replace(/\D/g, "").slice(0, 16);

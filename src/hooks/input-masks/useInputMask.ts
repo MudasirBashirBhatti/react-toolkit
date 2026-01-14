@@ -43,6 +43,7 @@ interface UseInputMaskOptions {
   onChange?: (rawValue: string, formattedValue: string) => void;
   allowedChars?: RegExp;
   formatter?: (rawValue: string) => string;
+  maxLength?: number;
   normalizer?: (val: string) => string;
 }
 
@@ -53,6 +54,7 @@ export function useInputMask({
   allowedChars = /./, // allow all by default
   formatter,
   normalizer,
+  maxLength,
 }: UseInputMaskOptions) {
   const isControlled = value !== undefined;
   const [internalValue, setInternalValue] = useState(defaultValue);
@@ -65,19 +67,22 @@ export function useInputMask({
   const formattedValue = formatter ? formatter(rawValue) : rawValue;
 
   // Update value internally or notify parent
+
   const setValue = (newValue: string) => {
-    // Normalize input if normalizer exists
     const normalized = normalizer ? normalizer(newValue) : newValue;
 
-    // Filter allowed characters
-    const cleaned = normalized
+    let cleaned = normalized
       .split("")
       .filter((c) => allowedChars.test(c))
       .join("");
 
+    // enforce maxLength if provided
+    if (maxLength !== undefined) {
+      cleaned = cleaned.slice(0, maxLength);
+    }
+
     if (!isControlled) setInternalValue(cleaned);
 
-    // Notify parent if onChange exists
     onChange?.(cleaned, formatter ? formatter(cleaned) : cleaned);
   };
 
