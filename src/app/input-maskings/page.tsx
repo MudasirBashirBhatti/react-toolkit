@@ -1,6 +1,7 @@
 "use client";
+import { useCreditCardMask } from "@/hooks/input-masks/useCreditCardMask";
 // import { useInputMask } from "@/hooks/input-masks/useInputMask";
-import { usePhoneMask } from "@/hooks/input-masks/usePhoneMask";
+// import { usePhoneMask } from "@/hooks/input-masks/usePhoneMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -10,14 +11,17 @@ const InputMaskingsPage = () => {
   //   formatter: (val) => val.toUpperCase(),
   // });
 
-  // const phone masking hook
-  const { value, rawValue, handleChange } = usePhoneMask({
-    defaultValue: "123232322222",
-  });
+  // ........... phone masking hook ............
+  // const { value, rawValue, handleChange } = usePhoneMask({
+  //   defaultValue: "123232322222",
+  // });
 
+  // ................ credit card masking hook .............
+  const { handleChange, rawValue, value } = useCreditCardMask({
+    defaultValue: "123232322222asdfa4234234234234",
+  });
   return (
     <div>
-      {/* <input type="text" value={value} onChange={handleInputMask} /> */}
       <input type="text" value={value} onChange={handleChange} />
       {rawValue}
     </div>
