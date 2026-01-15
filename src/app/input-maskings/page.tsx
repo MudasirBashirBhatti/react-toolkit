@@ -1,5 +1,5 @@
 "use client";
-import { usePassportMask } from "@/hooks/input-masks/usePassportMask";
+import { useMACAddressMask } from "@/hooks/input-masks/useMACaddredMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -62,7 +62,12 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useCVVMask({ maxLength: 3 });
 
   // ................ passport masking hook .............
-  const { handleChange, rawValue, value } = usePassportMask({ maxLength: 8 });
+  // const { handleChange, rawValue, value } = usePassportMask({ maxLength: 8 });
+
+  // ................ mac address masking hook .............
+  const { handleChange, rawValue, value } = useMACAddressMask({
+    separator: "-",
+  });
 
   return (
     <div>
