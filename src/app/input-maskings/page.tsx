@@ -1,5 +1,5 @@
 "use client";
-import { useBICMask } from "@/hooks/input-masks/useBICMask";
+import { useCVVMask } from "@/hooks/input-masks/useCVVMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -55,8 +55,11 @@ const InputMaskingsPage = () => {
   // ................ licence plate masking hook .............
   // const { handleChange, rawValue, value } = useLicensePlateMask({});
 
-  // ................ licence plate masking hook .............
-  const { handleChange, rawValue, value } = useBICMask({});
+  // ................ BIC masking hook .............
+  // const { handleChange, rawValue, value } = useBICMask({});
+
+  // ................ CVV masking hook .............
+  const { handleChange, rawValue, value } = useCVVMask({ maxLength: 3 });
 
   return (
     <div>
