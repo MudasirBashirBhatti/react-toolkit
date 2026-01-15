@@ -1,5 +1,5 @@
 "use client";
-import { useCVVMask } from "@/hooks/input-masks/useCVVMask";
+import { usePassportMask } from "@/hooks/input-masks/usePassportMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -59,7 +59,10 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useBICMask({});
 
   // ................ CVV masking hook .............
-  const { handleChange, rawValue, value } = useCVVMask({ maxLength: 3 });
+  // const { handleChange, rawValue, value } = useCVVMask({ maxLength: 3 });
+
+  // ................ passport masking hook .............
+  const { handleChange, rawValue, value } = usePassportMask({ maxLength: 8 });
 
   return (
     <div>
