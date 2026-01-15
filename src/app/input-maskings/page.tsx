@@ -1,5 +1,5 @@
 "use client";
-import { useIPv4Mask } from "@/hooks/input-masks/useIPV4Mask";
+import { useRoutingNumberMask } from "@/hooks/input-masks/useRoutingNumberMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -69,11 +69,14 @@ const InputMaskingsPage = () => {
   //   separator: "-",
   // });
 
-  // ................ mac address masking hook .............
-  const { handleChange, rawValue, value } = useIPv4Mask({
-    separator: "-",
-    maxOctets: 2,
-  });
+  // ................ ipv4 masking hook .............
+  // const { handleChange, rawValue, value } = useIPv4Mask({
+  //   separator: "-",
+  //   maxOctets: 2,
+  // });
+
+  // ................ ipv4 masking hook .............
+  const { handleChange, rawValue, value } = useRoutingNumberMask({});
 
   return (
     <div>
