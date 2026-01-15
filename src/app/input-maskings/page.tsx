@@ -1,5 +1,5 @@
 "use client";
-import { useZipCodeMask } from "@/hooks/input-masks/useZipCodeMask";
+import { useCustomMask } from "@/hooks/input-masks/useCustomMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -32,7 +32,13 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = usePercentageMask({});
 
   // ................ zip code masking hook .............
-  const { handleChange, rawValue, value } = useZipCodeMask({});
+  // const { handleChange, rawValue, value } = useZipCodeMask({});
+
+  // ................ custom masking hook .............
+  const { handleChange, rawValue, value } = useCustomMask({
+    mask: "XXX-XXX-XXX-XXX",
+    charactersLength: 12,
+  });
 
   return (
     <div>
