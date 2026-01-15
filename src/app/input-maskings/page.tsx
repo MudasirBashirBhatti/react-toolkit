@@ -1,5 +1,6 @@
 "use client";
 import { useDateMask } from "@/hooks/input-masks/useDateMask";
+import { useTimeMask } from "@/hooks/input-masks/useTimeMask";
 // import { useCreditCardMask } from "@/hooks/input-masks/useCreditCardMask";
 // import { useInputMask } from "@/hooks/input-masks/useInputMask";
 // import { usePhoneMask } from "@/hooks/input-masks/usePhoneMask";
@@ -23,7 +24,10 @@ const InputMaskingsPage = () => {
   // });
 
   // ................ date masking hook .............
-  const { handleChange, rawValue, value } = useDateMask({});
+  // const { handleChange, rawValue, value } = useDateMask({});
+
+  // ................ time masking hook .............
+  const { handleChange, rawValue, value } = useTimeMask({});
 
   return (
     <div>
