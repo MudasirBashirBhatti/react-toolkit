@@ -1,6 +1,6 @@
 "use client";
 
-import { useCanadianPostalMask } from "@/hooks/input-masks/useCanadianPostalMask";
+import { useCreditCardNameMask } from "@/hooks/input-masks/useCreditCardNameMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -98,7 +98,10 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useUSStateCodeMask({});
 
   // ................ Canadian postal masking hook .............
-  const { handleChange, rawValue, value } = useCanadianPostalMask({});
+  // const { handleChange, rawValue, value } = useCanadianPostalMask({});
+
+  // ................ Canadian postal masking hook .............
+  const { handleChange, rawValue, value } = useCreditCardNameMask({});
 
   return (
     <div>
