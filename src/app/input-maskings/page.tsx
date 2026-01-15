@@ -1,5 +1,5 @@
 "use client";
-import { useRoutingNumberMask } from "@/hooks/input-masks/useRoutingNumberMask";
+import { useSWIFTMask } from "@/hooks/input-masks/useSwiftMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -75,8 +75,11 @@ const InputMaskingsPage = () => {
   //   maxOctets: 2,
   // });
 
+  // ................ routing number masking hook .............
+  // const { handleChange, rawValue, value } = useRoutingNumberMask({});
+
   // ................ ipv4 masking hook .............
-  const { handleChange, rawValue, value } = useRoutingNumberMask({});
+  const { handleChange, rawValue, value } = useSWIFTMask({ maxLength: 3 });
 
   return (
     <div>
