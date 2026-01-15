@@ -1,6 +1,6 @@
 "use client";
 
-import { useVehicleLicenseMask } from "@/hooks/input-masks/useVehicleLicenceMask";
+import { useTaxVatMask } from "@/hooks/input-masks/useTaxVatMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -107,9 +107,12 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useIFCMask({});
 
   // ................ Vehicle licence masking hook .............
-  const { handleChange, rawValue, value } = useVehicleLicenseMask({
-    separator: " ",
-  });
+  // const { handleChange, rawValue, value } = useVehicleLicenseMask({
+  //   separator: " ",
+  // });
+
+  // ................ Tax Vat masking hook .............
+  const { handleChange, rawValue, value } = useTaxVatMask({ separator: "-" });
 
   return (
     <div>
