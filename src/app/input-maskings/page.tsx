@@ -1,5 +1,5 @@
 "use client";
-import { useSWIFTMask } from "@/hooks/input-masks/useSwiftMask";
+import { useTINMask } from "@/hooks/input-masks/useTINMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -78,8 +78,11 @@ const InputMaskingsPage = () => {
   // ................ routing number masking hook .............
   // const { handleChange, rawValue, value } = useRoutingNumberMask({});
 
-  // ................ ipv4 masking hook .............
-  const { handleChange, rawValue, value } = useSWIFTMask({ maxLength: 3 });
+  // ................ swift masking hook .............
+  // const { handleChange, rawValue, value } = useSWIFTMask({});
+
+  // ................ TIN (TAX Identification number) masking hook .............
+  const { handleChange, rawValue, value } = useTINMask({});
 
   return (
     <div>
