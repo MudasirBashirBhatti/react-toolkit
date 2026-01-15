@@ -51,7 +51,7 @@ export function useInputMask({
   value,
   defaultValue = "",
   onChange,
-  allowedChars = /./, // allow all by default
+  allowedChars = /./,
   formatter,
   normalizer,
   maxLength,
@@ -60,30 +60,32 @@ export function useInputMask({
   const [internalValue, setInternalValue] = useState(defaultValue);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  // Determine the "raw" value based on controlled or uncontrolled
-  const rawValue = isControlled ? value! : internalValue;
+  // Use the controlled or internal raw value
+  const internalRaw = isControlled ? value! : internalValue;
 
-  // Apply formatting if provided
-  const formattedValue = formatter ? formatter(rawValue) : rawValue;
+  // Only normalize for external reporting
+  const rawValue = normalizer ? normalizer(internalRaw) : internalRaw;
 
-  // Update value internally or notify parent
+  // Formatter should always get **unmodified raw input**
+  const formattedValue = formatter ? formatter(internalRaw) : internalRaw;
 
   const setValue = (newValue: string) => {
-    const normalized = normalizer ? normalizer(newValue) : newValue;
-
-    let cleaned = normalized
+    // Filter allowed chars
+    let cleaned = newValue
       .split("")
       .filter((c) => allowedChars.test(c))
       .join("");
 
     // enforce maxLength if provided
-    if (maxLength !== undefined) {
-      cleaned = cleaned.slice(0, maxLength);
-    }
+    if (maxLength !== undefined) cleaned = cleaned.slice(0, maxLength);
 
+    // Update internal state
     if (!isControlled) setInternalValue(cleaned);
 
-    onChange?.(cleaned, formatter ? formatter(cleaned) : cleaned);
+    // Report normalized rawValue to parent
+    const normalized = normalizer ? normalizer(cleaned) : cleaned;
+
+    onChange?.(normalized, formatter ? formatter(cleaned) : cleaned);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

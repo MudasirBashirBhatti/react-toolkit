@@ -1,5 +1,6 @@
 "use client";
-import { useCreditCardMask } from "@/hooks/input-masks/useCreditCardMask";
+import { useDateMask } from "@/hooks/input-masks/useDateMask";
+// import { useCreditCardMask } from "@/hooks/input-masks/useCreditCardMask";
 // import { useInputMask } from "@/hooks/input-masks/useInputMask";
 // import { usePhoneMask } from "@/hooks/input-masks/usePhoneMask";
 
@@ -17,9 +18,13 @@ const InputMaskingsPage = () => {
   // });
 
   // ................ credit card masking hook .............
-  const { handleChange, rawValue, value } = useCreditCardMask({
-    defaultValue: "123232322222asdfa4234234234234",
-  });
+  // const { handleChange, rawValue, value } = useCreditCardMask({
+  //   defaultValue: "123232322222asdfa4234234234234",
+  // });
+
+  // ................ date masking hook .............
+  const { handleChange, rawValue, value } = useDateMask({});
+
   return (
     <div>
       <input type="text" value={value} onChange={handleChange} />
