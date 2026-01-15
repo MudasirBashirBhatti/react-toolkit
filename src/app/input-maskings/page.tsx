@@ -1,5 +1,6 @@
 "use client";
-import { useISBNMask } from "@/hooks/input-masks/useISBNMask";
+
+import { useUSStateCodeMask } from "@/hooks/input-masks/useUsStateCodeMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -91,7 +92,10 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useVINMask({});
 
   // ................ ISBN (International Standard Book Number) masking hook .............
-  const { handleChange, rawValue, value } = useISBNMask({});
+  // const { handleChange, rawValue, value } = useISBNMask({});
+
+  // ................ us state code masking hook .............
+  const { handleChange, rawValue, value } = useUSStateCodeMask({});
 
   return (
     <div>
