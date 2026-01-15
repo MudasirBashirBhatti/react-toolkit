@@ -1,5 +1,5 @@
 "use client";
-import { useCustomMask } from "@/hooks/input-masks/useCustomMask";
+import { useDecimalMask } from "@/hooks/input-masks/useDecimalMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -35,10 +35,12 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useZipCodeMask({});
 
   // ................ custom masking hook .............
-  const { handleChange, rawValue, value } = useCustomMask({
-    mask: "XXX-XXX-XXX-XXX",
-    charactersLength: 12,
-  });
+  // const { handleChange, rawValue, value } = useCustomMask({
+  //   mask: "XXX-XXX-XXX-XXX",
+  //   charactersLength: 12,
+  // });
+  // ................ custom masking hook .............
+  const { handleChange, rawValue, value } = useDecimalMask({});
 
   return (
     <div>
