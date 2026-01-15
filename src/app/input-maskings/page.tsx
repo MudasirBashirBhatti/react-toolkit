@@ -1,6 +1,6 @@
 "use client";
 
-import { useUSStateCodeMask } from "@/hooks/input-masks/useUsStateCodeMask";
+import { useCanadianPostalMask } from "@/hooks/input-masks/useCanadianPostalMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -95,7 +95,10 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useISBNMask({});
 
   // ................ us state code masking hook .............
-  const { handleChange, rawValue, value } = useUSStateCodeMask({});
+  // const { handleChange, rawValue, value } = useUSStateCodeMask({});
+
+  // ................ Canadian postal masking hook .............
+  const { handleChange, rawValue, value } = useCanadianPostalMask({});
 
   return (
     <div>
