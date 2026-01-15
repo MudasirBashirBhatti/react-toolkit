@@ -1,5 +1,5 @@
 "use client";
-import { useIBANMask } from "@/hooks/input-masks/useIBANMask";
+import { useLicensePlateMask } from "@/hooks/input-masks/useLicencePlateMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -40,17 +40,20 @@ const InputMaskingsPage = () => {
   //   charactersLength: 12,
   // });
 
-  // ................ custom masking hook .............
+  // ................ decimal masking hook .............
   // const { handleChange, rawValue, value } = useDecimalMask({});
 
-  // ................ custom masking hook .............
+  // ................ email masking hook .............
   // const { handleChange, rawValue, value } = useEmailMask({});
 
-  // ................ custom masking hook .............
+  // ................ ssn masking hook .............
   // const { handleChange, rawValue, value } = useSSNMask({});
 
-  // ................ custom masking hook .............
-  const { handleChange, rawValue, value } = useIBANMask({});
+  // ................ IBAN masking hook .............
+  // const { handleChange, rawValue, value } = useIBANMask({});
+
+  // ................ licence plate masking hook .............
+  const { handleChange, rawValue, value } = useLicensePlateMask({});
 
   return (
     <div>
