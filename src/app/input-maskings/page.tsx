@@ -1,6 +1,6 @@
 "use client";
 
-import { useIFCMask } from "@/hooks/input-masks/useIFCMask";
+import { useVehicleLicenseMask } from "@/hooks/input-masks/useVehicleLicenceMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -104,7 +104,12 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useCreditCardNameMask({});
 
   // ................ IFC (Indian Banks Code) masking hook .............
-  const { handleChange, rawValue, value } = useIFCMask({});
+  // const { handleChange, rawValue, value } = useIFCMask({});
+
+  // ................ Vehicle licence masking hook .............
+  const { handleChange, rawValue, value } = useVehicleLicenseMask({
+    separator: " ",
+  });
 
   return (
     <div>
