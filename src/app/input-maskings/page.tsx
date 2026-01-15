@@ -1,6 +1,6 @@
 "use client";
 
-import { useCreditCardNameMask } from "@/hooks/input-masks/useCreditCardNameMask";
+import { useIFCMask } from "@/hooks/input-masks/useIFCMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -100,8 +100,11 @@ const InputMaskingsPage = () => {
   // ................ Canadian postal masking hook .............
   // const { handleChange, rawValue, value } = useCanadianPostalMask({});
 
-  // ................ Canadian postal masking hook .............
-  const { handleChange, rawValue, value } = useCreditCardNameMask({});
+  // ................ Credit Card Name masking hook .............
+  // const { handleChange, rawValue, value } = useCreditCardNameMask({});
+
+  // ................ IFC (Indian Banks Code) masking hook .............
+  const { handleChange, rawValue, value } = useIFCMask({});
 
   return (
     <div>
