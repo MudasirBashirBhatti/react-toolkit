@@ -1,5 +1,5 @@
 "use client";
-import { useLicensePlateMask } from "@/hooks/input-masks/useLicencePlateMask";
+import { useBICMask } from "@/hooks/input-masks/useBICMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -53,7 +53,10 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useIBANMask({});
 
   // ................ licence plate masking hook .............
-  const { handleChange, rawValue, value } = useLicensePlateMask({});
+  // const { handleChange, rawValue, value } = useLicensePlateMask({});
+
+  // ................ licence plate masking hook .............
+  const { handleChange, rawValue, value } = useBICMask({});
 
   return (
     <div>
