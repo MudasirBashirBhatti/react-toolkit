@@ -1,5 +1,5 @@
 "use client";
-import { useEmailMask } from "@/hooks/input-masks/useEmailMask";
+import { useSSNMask } from "@/hooks/input-masks/useSSNMask";
 
 const InputMaskingsPage = () => {
   //Plain input masking hook
@@ -44,7 +44,10 @@ const InputMaskingsPage = () => {
   // const { handleChange, rawValue, value } = useDecimalMask({});
 
   // ................ custom masking hook .............
-  const { handleChange, rawValue, value } = useEmailMask({});
+  // const { handleChange, rawValue, value } = useEmailMask({});
+
+  // ................ custom masking hook .............
+  const { handleChange, rawValue, value } = useSSNMask({});
 
   return (
     <div>
