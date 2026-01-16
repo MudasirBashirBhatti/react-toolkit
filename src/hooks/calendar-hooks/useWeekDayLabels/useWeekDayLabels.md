@@ -23,7 +23,7 @@ The hook leverages the native `Intl.DateTimeFormat` API to ensure **correct loca
 ## Function Signature
 
 ```ts
-useWeekdayLabels(locale?: string, weekStart?: 0 | 1): string[]
+useWeekdayLabels({locale?: string, weekStart?: 0 | 1}): string[]
 ```
 
 ---
@@ -46,7 +46,7 @@ Examples:
 usage:
 
 ```ts
-"useWeekdayLabels("fr-FR")"
+useWeekdayLabels({ locale: "fr-FR" });
 ```
 
 **weekstart** (0 or 1, optional)  
@@ -58,9 +58,19 @@ Defines which day the week starts on.
 
 usage:
 
-```ts
-"useWeekdayLabels("fr-FR",0)"
+```js
+useWeekdayLabels({ weekStart: 0 });
 ```
+
+**dayFormat** `"short" | "long" | "narrow"`
+
+Defines how weekday labels are formatted.
+
+- `"short"` → Mon, Tue, Wed (default)
+- `"long"` → Monday, Tuesday, Wednesday
+- `"narrow"` → M, T, W
+
+This does **not** affect ordering — only the label format.
 
 ---
 
