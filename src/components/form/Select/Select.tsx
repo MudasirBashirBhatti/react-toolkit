@@ -15,18 +15,32 @@ export const Select = ({
   options,
   value,
   placeholder,
+  searchable = false,
   onChange,
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const [search, setsearch] = useState("");
 
-  const handleSelect = (val: string | number) => {
+  // filteration logic
+  const filteredOptions = options.filter((opt) =>
+    opt.label.toLocaleLowerCase().includes(search.toLocaleLowerCase()),
+  );
+
+  const handleSelect = (label: string, val: string | number) => {
     onChange?.(val);
     setIsOpen(false);
+    setsearch(label);
   };
 
-  const selectedLabel =
-    options.find((opt) => opt.value === value)?.label || placeholder;
+  const selectedOption = options.find((opt) => opt.value === value)?.label;
+  const selectedLabel = selectedOption || placeholder;
+
+  const toggleDropdown = () => {
+    if (disabled) return;
+    if (!isOpen) setsearch((selectedOption as string) || "");
+    setIsOpen((prev) => !prev);
+  };
 
   useClickOutside(containerRef, () => setIsOpen(false));
 
@@ -51,23 +65,38 @@ export const Select = ({
       <div
         ref={containerRef}
         className={`${styles.wrapper} ${disabled ? styles.disabled : ""}`}
-        onClick={() => !disabled && setIsOpen((prev) => !prev)}
+        onClick={toggleDropdown}
       >
-        <input
-          type="text"
-          readOnly
-          defaultValue={selectedLabel}
-          tabIndex={0}
-          className={styles.selected}
-        />
+        {!searchable && (
+          <input
+            type="text"
+            readOnly
+            defaultValue={selectedLabel}
+            tabIndex={0}
+            className={styles.selected}
+          />
+        )}
+
+        {searchable && (
+          <input
+            type="text"
+            tabIndex={0}
+            className={styles.selected}
+            onChange={(e) => setsearch(e.target.value)}
+            value={isOpen ? search : selectedLabel}
+          />
+        )}
 
         {isOpen && (
           <ul className={styles.options}>
-            {options.map((opt) => (
+            {(searchable ? filteredOptions : options).map((opt) => (
               <li
                 key={opt.value}
                 className={styles.option}
-                onClick={() => handleSelect(opt.value)}
+                onClick={(e) => {
+                  handleSelect(opt.label, opt.value);
+                  e.stopPropagation();
+                }}
               >
                 {opt.icon && (
                   <span className={styles.optionIcon}>{opt.icon}</span>

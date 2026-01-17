@@ -17,4 +17,5 @@ export interface SelectProps extends Omit<FieldProps, "children"> {
   options: Option[];
   placeholder?: string;
   disabled?: boolean;
+  searchable?: boolean;
 }

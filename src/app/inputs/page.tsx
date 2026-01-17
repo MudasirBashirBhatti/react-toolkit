@@ -16,6 +16,8 @@ const InputsPage = () => {
         label="This is label"
         onChange={(value) => setselectValue(value as string)}
         value={selectValue}
+        placeholder="Select Value"
+        searchable
       />
     </div>
   );
