@@ -1,0 +1,47 @@
+.wrapper {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.selected {
+    flex: 1;
+    border: none;
+    cursor: initial;
+    outline: none;
+    background: transparent;
+}
+
+.dropdownIcon {
+    margin-left: 0.5rem;
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.option {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.optionIcon {
+    margin-right: 0.5rem;
+}

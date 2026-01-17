@@ -1,18 +1,22 @@
-import { Input } from "@/components/inputs/Input/Input";
-import { BiHomeCircle } from "react-icons/bi";
-import { BsEye } from "react-icons/bs";
+"use client";
+import { Input, Select, Textarea } from "@/components/form";
+import { useState } from "react";
 
 const InputsPage = () => {
+  const [selectValue, setselectValue] = useState("");
   return (
     <div>
-      <Input
+      <Input label="This is label" placeholder="This is placeholder" />
+      <Textarea label="This is label" placeholder="This is placeholder" />
+      <Select
+        options={[
+          { label: "Pakistan", value: "pakistan" },
+          { label: "India", value: "india" },
+        ]}
         label="This is label"
-        hint="This is hint"
-        leftIcon={<BiHomeCircle />}
-        rightIcon={<BsEye />}
-      >
-        <input type="text" />
-      </Input>
+        onChange={(value) => setselectValue(value as string)}
+        value={selectValue}
+      />
     </div>
   );
 };
