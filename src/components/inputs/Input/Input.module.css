@@ -1,0 +1,114 @@
+/* ===================== */
+/* WRAPPER */
+/* ===================== */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* label */
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.required {
+  color: #ff3b30;
+}
+
+/* ===================== */
+/* INPUT CONTAINER */
+/* ===================== */
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 44px;
+  padding: 0 14px;
+
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+
+  transition: all 0.15s ease;
+}
+
+/* hover */
+.inputWrapper:hover {
+  border-color: #b5b5b5;
+}
+
+/* focus */
+.inputWrapper:focus-within {
+  border-color: #000;
+}
+
+/* disabled */
+.disabled {
+  background: #f5f5f5;
+  border-color: #e5e5e5;
+  cursor: not-allowed;
+}
+
+.disabled input {
+  color: #a0a0a0;
+}
+
+/* error */
+.error {
+  border-color: #ff3b30;
+}
+
+.error:focus-within {
+  border-color: #ff3b30;
+}
+
+/* ===================== */
+/* INPUT */
+/* ===================== */
+.inputWrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #000;
+}
+
+.input::placeholder {
+  color: #b0b0b0;
+}
+
+/* ===================== */
+/* ICON */
+/* ===================== */
+.icon {
+  display: flex;
+  color: #000;
+}
+
+/* disabled icons */
+.disabled .icon {
+  color: #b0b0b0;
+}
+
+/* error icons */
+.error .icon {
+  color: #ff3b30;
+}
+
+/* ===================== */
+/* TEXT */
+/* ===================== */
+.hint {
+  font-size: 12px;
+  color: #a0a0a0;
+}
+
+.errorText {
+  font-size: 12px;
+  color: #ff3b30;
+}
