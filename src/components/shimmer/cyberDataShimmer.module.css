@@ -1,0 +1,27 @@
+.cyberDataShimmer {
+    position: relative;
+    overflow: hidden;
+    background: #0b0b0b;
+}
+
+.cyberDataShimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+            rgba(0, 255, 140, 0.8) 0px,
+            rgba(0, 255, 140, 0.8) 2px,
+            transparent 4px,
+            transparent 10px);
+    animation: dataStream 0.9s linear infinite;
+}
+
+@keyframes dataStream {
+    from {
+        transform: translateX(-40px);
+    }
+
+    to {
+        transform: translateX(40px);
+    }
+}

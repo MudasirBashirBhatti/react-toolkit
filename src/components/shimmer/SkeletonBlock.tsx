@@ -26,11 +26,14 @@
 // import styles from "./neonGridShimmer.module.css";
 // import styles from "./laserShimmer.module.css";
 // import styles from "./quantumNoiseShimmer.module.css";
-import styles from "./hudScanShimmer.module.css";
+// import styles from "./hudScanShimmer.module.css";
+import styles from "./cyberDataShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.hudScanShimmer} ${className}`} {...props} />;
+  return (
+    <div className={`${styles.cyberDataShimmer} ${className}`} {...props} />
+  );
 };
 
 export default SkeletonBlock;
