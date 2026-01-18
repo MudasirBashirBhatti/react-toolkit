@@ -37,12 +37,13 @@
 // import styles from "./binaryCodeShimmer.module.css";
 // import styles from "./brainWaveShimmer.module.css";
 // import styles from "./cyberShimmer.module.css";
-import styles from "./plasmaEnergyShimmer.module.css";
+// import styles from "./plasmaEnergyShimmer.module.css";
+import styles from "./neuralSynapseShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.plasmaEnergyShimmer} ${className}`} {...props} />
+    <div className={`${styles.neuralSynapseShimmer} ${className}`} {...props} />
   );
 };
 

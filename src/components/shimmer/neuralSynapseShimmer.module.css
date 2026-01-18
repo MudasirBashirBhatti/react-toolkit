@@ -1,0 +1,58 @@
+.neuralSynapseShimmer {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.neuralSynapseShimmer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 70% 30%, rgba(255, 69, 0, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 50% 80%, rgba(50, 205, 50, 0.1) 2px, transparent 3px);
+    background-size: 60px 60px;
+    animation: synapse-move 8s infinite linear;
+}
+
+.neuralSynapseShimmer::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent,
+            gold,
+            orangered,
+            limegreen,
+            transparent);
+    animation: synapse-connect 3s infinite ease-in-out;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes synapse-move {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-60px, -60px);
+    }
+}
+
+@keyframes synapse-connect {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scaleY(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scaleY(1);
+    }
+}
