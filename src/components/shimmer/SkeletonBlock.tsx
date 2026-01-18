@@ -70,11 +70,14 @@
 // import styles from "./stardustNebula.module.css";
 // import styles from "./fireflySwarm.module.css";
 // import styles from "./hyperspaceTunnel.module.css";
-import styles from "./rainbowPrism.module.css";
+// import styles from "./rainbowPrism.module.css";
+
+// school and coleges shimmer effects
+import styles from "./wisdomFlow.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.rainbowPrism} ${className}`} {...props} />;
+  return <div className={`${styles.wisdomFlow} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;

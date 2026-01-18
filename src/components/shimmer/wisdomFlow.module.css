@@ -1,0 +1,73 @@
+.wisdomFlow {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(13, 110, 253, 0.1);
+}
+
+.wisdomFlow::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(13, 110, 253, 0.1) 20%,
+            rgba(25, 135, 84, 0.15) 50%,
+            rgba(13, 110, 253, 0.1) 80%,
+            transparent 100%);
+    animation: knowledgeFlow 3s infinite linear;
+    transform: skewX(-15deg);
+}
+
+.wisdomFlow::after {
+    content: "📚";
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    font-size: 24px;
+    animation: bookTravel 3s infinite linear;
+    opacity: 0.7;
+}
+
+@keyframes knowledgeFlow {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+
+    10%,
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        left: 0%;
+        opacity: 0;
+    }
+}
+
+@keyframes bookTravel {
+    0% {
+        left: -50px;
+        opacity: 0;
+        transform: translateY(-50%) rotate(0deg);
+    }
+
+    20% {
+        opacity: 0.7;
+        transform: translateY(-50%) rotate(10deg);
+    }
+
+    80% {
+        opacity: 0.7;
+        transform: translateY(-50%) rotate(-10deg);
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+        transform: translateY(-50%) rotate(0deg);
+    }
+}
