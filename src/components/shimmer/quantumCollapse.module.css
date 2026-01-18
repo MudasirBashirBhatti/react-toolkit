@@ -1,0 +1,86 @@
+.quantumCollapse {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.quantumCollapse::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 255, 255, 0.4) 30%,
+            transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: collapseWave 3s infinite;
+    filter: blur(5px);
+}
+
+@keyframes collapseWave {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+
+    40% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.3;
+    }
+
+    60% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+.quantumCollapse::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00ff88;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: particleBurst 3s infinite;
+    box-shadow:
+        0 0 30px #00ff88,
+        0 0 60px #00ff88;
+}
+
+@keyframes particleBurst {
+
+    0%,
+    60%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+
+    65% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 1;
+    }
+}
