@@ -1,0 +1,84 @@
+.artBrush {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.artBrush::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 8px;
+    background: linear-gradient(45deg, #6f42c1, #e83e8c);
+    top: 40%;
+    left: 20%;
+    transform: rotate(var(--angle, 0deg));
+    border-radius: 4px;
+    animation: brushStroke 4s infinite ease-in-out;
+}
+
+.artBrush::after {
+    content: "";
+    position: absolute;
+    width: var(--stroke-width, 0);
+    height: 4px;
+    background: linear-gradient(90deg,
+            #6f42c1 0%,
+            #e83e8c 50%,
+            #fd7e14 100%);
+    top: 50%;
+    left: 25%;
+    border-radius: 2px;
+    animation: paintFlow 4s infinite ease-in-out;
+}
+
+@keyframes brushStroke {
+
+    0%,
+    100% {
+        transform: rotate(0deg) translateY(0);
+        left: 20%;
+        top: 40%;
+    }
+
+    25% {
+        transform: rotate(15deg) translateY(20px);
+        left: 40%;
+        top: 45%;
+        --stroke-width: 30%;
+    }
+
+    50% {
+        transform: rotate(-10deg) translateY(-10px);
+        left: 60%;
+        top: 35%;
+        --stroke-width: 50%;
+    }
+
+    75% {
+        transform: rotate(5deg) translateY(10px);
+        left: 80%;
+        top: 40%;
+        --stroke-width: 20%;
+    }
+}
+
+@keyframes paintFlow {
+
+    0%,
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+
+    25%,
+    75% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

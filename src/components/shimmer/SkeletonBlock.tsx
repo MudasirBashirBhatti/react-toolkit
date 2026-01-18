@@ -77,13 +77,12 @@
 // import styles from "./penWriting.module.css";
 // import styles from "./scienceBubbles.module.css";
 // import styles from "./equationSolving.module.css";
-import styles from "./historyTimeline.module.css";
+// import styles from "./historyTimeline.module.css";
+import styles from "./artBrush.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return (
-    <div className={`${styles.historyTimeline} ${className}`} {...props} />
-  );
+  return <div className={`${styles.artBrush} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
