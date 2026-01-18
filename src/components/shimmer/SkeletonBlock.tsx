@@ -1,8 +1,9 @@
-import shimmerStyles from "./shimmerAnimation.module.css";
+// import styles from "./shimmerAnimation.module.css";
+import styles from "./diagonalShimmer.module.css";
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${shimmerStyles.skeleton} ${className}`} {...props} />
+    <div className={`${styles.diagonalShimmer} ${className}`} {...props} />
   );
 };
 

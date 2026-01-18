@@ -1,0 +1,29 @@
+.diagonalShimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+.diagonalShimmer::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 25%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0) 75%);
+    animation: diagonal 2s infinite;
+}
+
+@keyframes diagonal {
+    0% {
+        transform: translate(-100%, -100%);
+    }
+
+    100% {
+        transform: translate(100%, 100%);
+    }
+}
