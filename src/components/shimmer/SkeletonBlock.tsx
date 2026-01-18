@@ -10,19 +10,17 @@
 // import styles from "./diagonalGlowShimmer.module.css";
 // import styles from "./flickerShimmer.module.css";
 // import styles from "./softGlowShimmer.module.css";
-import styles from "./verticalStripeShimmer.module.css";
+// import styles from "./verticalStripeShimmer.module.css";
 
-// gradient shimmers
+// colored shimmers
 // import styles from "./blueGradientShimmer.module.css";
 // import styles from "./rainbowGradientShimmer.module.css";
+import styles from "./neonPulseShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div
-      className={`${styles.verticalStripeShimmer} ${className}`}
-      {...props}
-    />
+    <div className={`${styles.neonPulseShimmer} ${className}`} {...props} />
   );
 };
 
