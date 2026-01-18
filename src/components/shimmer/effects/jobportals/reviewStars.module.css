@@ -1,0 +1,63 @@
+.reviewStars {
+    position: relative;
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #ffecb5;
+}
+
+.reviewStars::before,
+.reviewStars::after,
+.reviewStars .star-3,
+.reviewStars .star-4,
+.reviewStars .star-5 {
+    content: "★";
+    position: absolute;
+    color: #ffc107;
+    font-size: 24px;
+    top: 40%;
+    opacity: 0.3;
+    animation: starFill 3s infinite ease-in-out;
+}
+
+.reviewStars::before {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.reviewStars::after {
+    left: 35%;
+    animation-delay: 0.2s;
+}
+
+.reviewStars .star-3 {
+    left: 50%;
+    animation-delay: 0.4s;
+}
+
+.reviewStars .star-4 {
+    left: 65%;
+    animation-delay: 0.6s;
+}
+
+.reviewStars .star-5 {
+    left: 80%;
+    animation-delay: 0.8s;
+}
+
+@keyframes starFill {
+
+    0%,
+    100% {
+        color: #ffc107;
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        color: #ff9800;
+        opacity: 1;
+        transform: scale(1.2);
+        text-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+    }
+}
