@@ -1,0 +1,31 @@
+.neutralWave {
+    position: relative;
+    overflow: hidden;
+    background: #f5f7fa;
+    border-radius: 8px;
+}
+
+.neutralWave::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%);
+    animation: neutralShimmer 2s infinite;
+    transform: skewX(-20deg);
+}
+
+@keyframes neutralShimmer {
+    0% {
+        left: -150%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
