@@ -24,11 +24,14 @@
 // import styles from "./pulseLineShimmer.module.css";
 // import styles from "./holoShimmer.module.css";
 // import styles from "./neonGridShimmer.module.css";
-import styles from "./laserShimmer.module.css";
+// import styles from "./laserShimmer.module.css";
+import styles from "./quantumNoiseShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.laserShimmer} ${className}`} {...props} />;
+  return (
+    <div className={`${styles.quantumNoiseShimmer} ${className}`} {...props} />
+  );
 };
 
 export default SkeletonBlock;
