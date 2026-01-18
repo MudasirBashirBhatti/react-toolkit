@@ -1,0 +1,32 @@
+.hologramFlicker {
+    position: relative;
+    overflow: hidden;
+    background: rgba(0, 255, 255, 0.15);
+    animation: holoFlicker 1.4s infinite;
+}
+
+@keyframes holoFlicker {
+    0% {
+        opacity: 0.6;
+    }
+
+    20% {
+        opacity: 0.9;
+    }
+
+    40% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.85;
+    }
+
+    80% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}

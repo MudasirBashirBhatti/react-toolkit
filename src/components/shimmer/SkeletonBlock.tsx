@@ -30,6 +30,7 @@
 // import styles from "./cyberDataShimmer.module.css";
 // import styles from "./energyCoreShimmer.module.css";
 // import styles from "./glitchShimmer.module.css";
+// import styles from "./hologramFlickerShimmer.module.css";
 import styles from "./neuralWaveShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
