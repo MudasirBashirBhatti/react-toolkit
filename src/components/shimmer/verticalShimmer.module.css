@@ -1,0 +1,29 @@
+.verticalShimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+.verticalShimmer::after {
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    animation: verticalMove 1.5s infinite;
+}
+
+@keyframes verticalMove {
+    0% {
+        top: -150%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
