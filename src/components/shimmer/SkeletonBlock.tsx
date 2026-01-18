@@ -65,12 +65,13 @@
 // import styles from "./bioluminescent.module.css";
 // import styles from "./quantumFoamShimmer.module.css";
 // import styles from "./auroraBorealis.module.css";
-import styles from "./plasmaDischarge.module.css";
+// import styles from "./plasmaDischarge.module.css";
+import styles from "./crystalRefraction.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.plasmaDischarge} ${className}`} {...props} />
+    <div className={`${styles.crystalRefraction} ${className}`} {...props} />
   );
 };
 
