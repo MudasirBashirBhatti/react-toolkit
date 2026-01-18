@@ -15,12 +15,13 @@
 // colored shimmers
 // import styles from "./blueGradientShimmer.module.css";
 // import styles from "./rainbowGradientShimmer.module.css";
-import styles from "./neonPulseShimmer.module.css";
+// import styles from "./neonPulseShimmer.module.css";
+import styles from "./rainbowWaveShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.neonPulseShimmer} ${className}`} {...props} />
+    <div className={`${styles.rainbowWaveShimmer} ${className}`} {...props} />
   );
 };
 
