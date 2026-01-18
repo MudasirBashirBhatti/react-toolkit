@@ -1,0 +1,77 @@
+.digitalParticleShimmer {
+    background: #0c0c0c;
+    position: relative;
+    overflow: hidden;
+}
+
+.digitalParticleShimmer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(64, 156, 255, 0.3) 1px, transparent 2px),
+        radial-gradient(circle at 90% 40%, rgba(255, 64, 129, 0.3) 1px, transparent 2px),
+        radial-gradient(circle at 50% 80%, rgba(64, 255, 191, 0.3) 1px, transparent 2px);
+    background-size: 100px 100px;
+    animation: particle-swarm 20s infinite linear;
+}
+
+.digitalParticleShimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%);
+    animation: particle-focus 4s infinite ease-in-out;
+}
+
+@keyframes particle-swarm {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(50px, 50px) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(0, 100px) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(-50px, 50px) rotate(270deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes particle-focus {
+
+    0%,
+    100% {
+        --x: 10%;
+        --y: 20%;
+        opacity: 0.3;
+    }
+
+    25% {
+        --x: 90%;
+        --y: 40%;
+        opacity: 0.5;
+    }
+
+    50% {
+        --x: 50%;
+        --y: 80%;
+        opacity: 0.3;
+    }
+
+    75% {
+        --x: 30%;
+        --y: 60%;
+        opacity: 0.5;
+    }
+}
