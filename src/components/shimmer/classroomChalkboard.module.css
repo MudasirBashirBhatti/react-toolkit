@@ -1,0 +1,77 @@
+.chalkboard {
+    position: relative;
+    background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 10px solid #654321;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.chalkboard::before {
+    content: "A + B = C";
+    position: absolute;
+    color: #f8f9fa;
+    font-family: 'Chalkduster', 'Comic Sans MS', cursive;
+    font-size: 28px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: var(--chalk-opacity, 0);
+    text-shadow: 0 0 10px rgba(248, 249, 250, 0.3);
+    animation: chalkWrite 4s infinite;
+}
+
+.chalkboard::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background: #f8f9fa;
+    top: 40%;
+    left: 20%;
+    transform: rotate(45deg);
+    animation: chalkStroke 4s infinite ease-in-out;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(248, 249, 250, 0.5);
+}
+
+@keyframes chalkWrite {
+
+    0%,
+    40% {
+        --chalk-opacity: 0;
+    }
+
+    50%,
+    90% {
+        --chalk-opacity: 1;
+    }
+
+    100% {
+        --chalk-opacity: 0;
+    }
+}
+
+@keyframes chalkStroke {
+
+    0%,
+    100% {
+        left: 20%;
+        opacity: 0;
+    }
+
+    25% {
+        left: 40%;
+        opacity: 1;
+    }
+
+    50% {
+        left: 60%;
+        opacity: 1;
+    }
+
+    75% {
+        left: 80%;
+        opacity: 1;
+    }
+}
