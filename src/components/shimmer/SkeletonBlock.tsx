@@ -56,12 +56,13 @@
 // import styles from "./thoughtProcess.module.css";
 // import styles from "./holographicReconstruct.module.css";
 // import styles from "./neuralActivation.module.css";
-import styles from "./quantumTeleportation.module.css";
+// import styles from "./quantumTeleportation.module.css";
+import styles from "./dataCompression.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.quantumTeleport} ${className}`} {...props} />
+    <div className={`${styles.dataCompression} ${className}`} {...props} />
   );
 };
 

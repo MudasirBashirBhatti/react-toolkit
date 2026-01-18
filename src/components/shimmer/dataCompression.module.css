@@ -1,0 +1,59 @@
+.dataCompression {
+    position: relative;
+    background: #111;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.dataCompression::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff4444, #44ff44, #4444ff);
+    top: 40%;
+    left: 5%;
+    animation: compressWidth 2s infinite alternate;
+}
+
+.dataCompression::after {
+    content: "";
+    position: absolute;
+    width: var(--size, 90%);
+    height: 4px;
+    background: linear-gradient(90deg, #ff4444, #44ff44, #4444ff);
+    top: 60%;
+    left: calc(5% + (100% - var(--size, 90%)) / 2);
+    animation: compressFinal 2s infinite alternate;
+    filter: blur(1px);
+}
+
+@keyframes compressWidth {
+    0% {
+        width: 90%;
+        opacity: 1;
+    }
+
+    50% {
+        width: 30%;
+        opacity: 0.5;
+    }
+
+    100% {
+        width: 10%;
+        opacity: 1;
+        --size: 10%;
+    }
+}
+
+@keyframes compressFinal {
+
+    0%,
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
