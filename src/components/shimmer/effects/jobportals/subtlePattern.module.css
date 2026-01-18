@@ -1,0 +1,32 @@
+.subtlePattern {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(45deg,
+            #f8f9fa 25%,
+            transparent 25%,
+            transparent 75%,
+            #f8f9fa 75%,
+            #f8f9fa 0),
+        linear-gradient(45deg,
+            #f8f9fa 25%,
+            transparent 25%,
+            transparent 75%,
+            #f8f9fa 75%,
+            #f8f9fa 0);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    animation: patternMove 4s infinite linear;
+}
+
+@keyframes patternMove {
+    0% {
+        background-position: 0 0, 10px 10px;
+    }
+
+    100% {
+        background-position: 20px 20px, 30px 30px;
+    }
+}
