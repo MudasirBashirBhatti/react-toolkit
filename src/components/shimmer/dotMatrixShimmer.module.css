@@ -1,0 +1,28 @@
+.dotMatrixShimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.dotMatrixShimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 8px 8px;
+    animation: dotMove 1.5s linear infinite;
+}
+
+@keyframes dotMove {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
