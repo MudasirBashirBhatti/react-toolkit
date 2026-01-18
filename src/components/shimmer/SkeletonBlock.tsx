@@ -73,11 +73,12 @@
 // import styles from "./rainbowPrism.module.css";
 
 // school and coleges shimmer effects
-import styles from "./wisdomFlow.module.css";
+// import styles from "./wisdomFlow.module.css";
+import styles from "./penWriting.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.wisdomFlow} ${className}`} {...props} />;
+  return <div className={`${styles.penWriting} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
