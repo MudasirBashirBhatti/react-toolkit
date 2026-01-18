@@ -1,0 +1,53 @@
+.corporateLayered {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+}
+
+.corporateLayered::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    animation: layerSlide 3s infinite ease-in-out;
+}
+
+.corporateLayered::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    animation: layerSlide 2s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+@keyframes layerSlide {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+
+    20%,
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        left: 200%;
+        opacity: 0;
+    }
+}

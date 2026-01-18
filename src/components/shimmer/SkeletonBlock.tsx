@@ -101,12 +101,13 @@
 // import styles from "./effects/jobportals/glassShimmer.module.css";
 // import styles from "./effects/jobportals/gradientShift.module.css";
 // import styles from "./effects/jobportals/neutralWave.module.css";
-import styles from "./effects/jobportals/professionalFade.module.css";
+// import styles from "./effects/jobportals/professionalFade.module.css";
+import styles from "./effects/jobportals/corporateLayerd.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.professionalFade} ${className}`} {...props} />
+    <div className={`${styles.corporateLayered} ${className}`} {...props} />
   );
 };
 
