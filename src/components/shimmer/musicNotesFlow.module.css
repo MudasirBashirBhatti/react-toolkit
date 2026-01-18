@@ -1,0 +1,108 @@
+.musicNotes {
+    position: relative;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #90caf9;
+}
+
+.musicNotes::before,
+.musicNotes::after,
+.musicNotes .note-3 {
+    content: "♪";
+    position: absolute;
+    color: #1976d2;
+    font-size: 24px;
+    bottom: 0;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+.musicNotes::before {
+    left: 20%;
+    animation-name: noteRise1;
+}
+
+.musicNotes::after {
+    content: "♫";
+    left: 50%;
+    animation-name: noteRise2;
+    animation-delay: 1s;
+}
+
+.musicNotes .note-3 {
+    content: "♩";
+    left: 70%;
+    animation-name: noteRise3;
+    animation-delay: 2s;
+}
+
+@keyframes noteRise1 {
+    0% {
+        bottom: 0;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: scale(1.1) rotate(10deg);
+    }
+}
+
+@keyframes noteRise2 {
+    0% {
+        bottom: 0;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: scale(1.1) rotate(-15deg);
+    }
+}
+
+@keyframes noteRise3 {
+    0% {
+        bottom: 0;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: scale(1.1) rotate(20deg);
+    }
+}
