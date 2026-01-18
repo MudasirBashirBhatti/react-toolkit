@@ -40,12 +40,14 @@
 // import styles from "./plasmaEnergyShimmer.module.css";
 // import styles from "./neuralSynapseShimmer.module.css";
 // import styles from "./digitalParticleShimmer.module.css";
-import styles from "./holographicGlitchShimmer.module.css";
+// import styles from "./holographicGlitchShimmer.module.css";
 
+// next gen effects
+import styles from "./quantumEntanglementShimmer.module.css";
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.holographicGlitch} ${className}`} {...props} />
+    <div className={`${styles.quantumEntanglement} ${className}`} {...props} />
   );
 };
 
