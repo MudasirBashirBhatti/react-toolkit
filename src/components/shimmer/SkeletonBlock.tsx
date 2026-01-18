@@ -100,11 +100,14 @@
 // import styles from "./effects/jobportals/minimalistPulse.module.css";
 // import styles from "./effects/jobportals/glassShimmer.module.css";
 // import styles from "./effects/jobportals/gradientShift.module.css";
-import styles from "./effects/jobportals/neutralWave.module.css";
+// import styles from "./effects/jobportals/neutralWave.module.css";
+import styles from "./effects/jobportals/professionalFade.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.neutralWave} ${className}`} {...props} />;
+  return (
+    <div className={`${styles.professionalFade} ${className}`} {...props} />
+  );
 };
 
 export default SkeletonBlock;
