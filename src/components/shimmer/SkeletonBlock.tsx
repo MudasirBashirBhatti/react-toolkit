@@ -35,13 +35,12 @@
 // import styles from "./skeletonNeuralShimmer.module.css";
 // import styles from "./skeletonHologramShimmer.module.css";
 // import styles from "./binaryCodeShimmer.module.css";
-import styles from "./brainWaveShimmer.module.css";
+// import styles from "./brainWaveShimmer.module.css";
+import styles from "./cyberShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return (
-    <div className={`${styles.skeletonBrainWave} ${className}`} {...props} />
-  );
+  return <div className={`${styles.cyberShimmer} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
