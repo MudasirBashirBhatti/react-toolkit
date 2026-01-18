@@ -49,11 +49,12 @@
 // import styles from "./cyberCynthWaveShimmer.module.css";
 // import styles from "./quantumFluxFieldShimmer.module.css";
 // import styles from "./aiNeuralNetwork.module.css";
-import styles from "./starFieldShimmer.module.css";
+// import styles from "./starFieldShimmer.module.css";
+import styles from "./neuralPathway.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.starfield} ${className}`} {...props} />;
+  return <div className={`${styles.neuralPathway} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;

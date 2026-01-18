@@ -1,0 +1,64 @@
+.neuralPathway {
+    position: relative;
+    background: #0a0a0a;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.neuralPathway::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            #00ff88 10%,
+            #00ff88 90%,
+            transparent 100%);
+    top: 30%;
+    left: 0;
+    animation: pathwayDraw 4s infinite linear;
+    filter: drop-shadow(0 0 10px #00ff88);
+    clip-path: polygon(0% 0%, var(--progress, 0%) 0%, var(--progress, 0%) 100%, 0% 100%);
+}
+
+.neuralPathway::after {
+    content: "•";
+    position: absolute;
+    color: #00ff88;
+    font-size: 20px;
+    top: 29%;
+    left: var(--dot-pos, 0%);
+    animation: pathwayNode 4s infinite linear;
+    text-shadow: 0 0 20px #00ff88;
+}
+
+@keyframes pathwayDraw {
+    0% {
+        --progress: 0%;
+        --dot-pos: 0%;
+    }
+
+    20% {
+        --progress: 25%;
+    }
+
+    40% {
+        --progress: 50%;
+        --dot-pos: 25%;
+    }
+
+    60% {
+        --progress: 75%;
+    }
+
+    80% {
+        --progress: 100%;
+        --dot-pos: 50%;
+    }
+
+    100% {
+        --progress: 100%;
+        --dot-pos: 75%;
+    }
+}
