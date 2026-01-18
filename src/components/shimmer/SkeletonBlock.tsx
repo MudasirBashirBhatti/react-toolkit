@@ -46,11 +46,14 @@
 // import styles from "./quantumEntanglementShimmer.module.css";
 // import styles from "./neuralMatrixGridShimmer.module.css";
 // import styles from "./holographicShimmer.module.css";
-import styles from "./cyberCynthWaveShimmer.module.css";
+// import styles from "./cyberCynthWaveShimmer.module.css";
+import styles from "./quantumFluxFieldShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.cyberSynthwave} ${className}`} {...props} />;
+  return (
+    <div className={`${styles.quantumFluxField} ${className}`} {...props} />
+  );
 };
 
 export default SkeletonBlock;

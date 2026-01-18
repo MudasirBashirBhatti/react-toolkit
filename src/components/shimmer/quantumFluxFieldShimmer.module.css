@@ -1,0 +1,77 @@
+.quantumFluxField {
+    position: relative;
+    background:
+        radial-gradient(ellipse at center,
+            #000000 0%,
+            #0a0a2a 50%,
+            #000000 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.quantumFluxField::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    background:
+        repeating-conic-gradient(from 0deg,
+            #00ffff 0deg 15deg,
+            transparent 15deg 30deg,
+            #ff00ff 30deg 45deg,
+            transparent 45deg 60deg);
+    animation: fluxRotation 8s infinite linear;
+    opacity: 0.1;
+}
+
+.quantumFluxField::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 50%);
+    animation: fluxMovement 6s infinite ease-in-out;
+    mix-blend-mode: screen;
+}
+
+@keyframes fluxRotation {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes fluxMovement {
+
+    0%,
+    100% {
+        --x: 20%;
+        --y: 20%;
+        opacity: 0.2;
+    }
+
+    25% {
+        --x: 80%;
+        --y: 20%;
+        opacity: 0.4;
+    }
+
+    50% {
+        --x: 80%;
+        --y: 80%;
+        opacity: 0.2;
+    }
+
+    75% {
+        --x: 20%;
+        --y: 80%;
+        opacity: 0.4;
+    }
+}
