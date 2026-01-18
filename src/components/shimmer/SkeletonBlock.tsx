@@ -61,11 +61,12 @@
 // import styles from "./aiLearning.module.css";
 // import styles from "./hologramDecode.module.css";
 // import styles from "./chromaticShimmer.module.css";
-import styles from "./liquidMercury.module.css";
+// import styles from "./liquidMercury.module.css";
+import styles from "./bioluminescent.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.liquidMercury} ${className}`} {...props} />;
+  return <div className={`${styles.bioluminescent} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
