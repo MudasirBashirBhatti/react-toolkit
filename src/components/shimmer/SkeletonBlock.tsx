@@ -3,11 +3,12 @@
 // import styles from "./pulseShimmer.module.css";
 // import styles from "./verticalShimmer.module.css";
 // import styles from "./multiShimmer.module.css";
-import styles from "./slowGlowShimmer.module.css";
+// import styles from "./slowGlowShimmer.module.css";
+import styles from "./dualLayerShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.slowGlow} ${className}`} {...props} />;
+  return <div className={`${styles.dualShimmer} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
