@@ -1,0 +1,80 @@
+.cyberSynthwave {
+    position: relative;
+    background:
+        linear-gradient(to bottom,
+            #1a0033 0%,
+            #4d0099 30%,
+            #9900ff 50%,
+            #4d0099 70%,
+            #1a0033 100%);
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.cyberSynthwave::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 50% 0%,
+            rgba(255, 0, 255, 0.4) 0%,
+            transparent 50%),
+        radial-gradient(circle at 50% 100%,
+            rgba(0, 255, 255, 0.4) 0%,
+            transparent 50%);
+    animation: synthwavePulse 4s infinite ease-in-out;
+    mix-blend-mode: overlay;
+}
+
+.cyberSynthwave::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            #ff00ff,
+            #00ffff,
+            #ff00ff,
+            transparent);
+    top: 50%;
+    left: -25%;
+    transform: translateY(-50%);
+    animation: synthwaveScan 3s infinite linear;
+    filter: blur(2px);
+    box-shadow:
+        0 0 20px #ff00ff,
+        0 0 40px #00ffff;
+}
+
+@keyframes synthwavePulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes synthwaveScan {
+    0% {
+        left: -25%;
+        opacity: 0;
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 125%;
+        opacity: 0;
+    }
+}
