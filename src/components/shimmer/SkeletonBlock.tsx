@@ -68,11 +68,14 @@
 // import styles from "./plasmaDischarge.module.css";
 // import styles from "./crystalRefraction.module.css";
 // import styles from "./stardustNebula.module.css";
-import styles from "./fireflySwarm.module.css";
+// import styles from "./fireflySwarm.module.css";
+import styles from "./hyperspaceTunnel.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.fireflySwarm} ${className}`} {...props} />;
+  return (
+    <div className={`${styles.hyperspaceTunnel} ${className}`} {...props} />
+  );
 };
 
 export default SkeletonBlock;
