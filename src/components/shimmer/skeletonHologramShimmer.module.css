@@ -1,0 +1,54 @@
+.skeletonHologram {
+    background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.skeletonHologram::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 20px,
+            rgba(64, 224, 208, 0.1) 20px,
+            rgba(64, 224, 208, 0.1) 40px);
+    animation: hologram-scan 3s infinite linear;
+}
+
+.skeletonHologram::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(64, 224, 208, 0.3) 20%,
+            rgba(147, 112, 219, 0.5) 50%,
+            rgba(64, 224, 208, 0.3) 80%,
+            transparent 100%);
+    animation: hologram-glow 4s infinite alternate;
+    filter: blur(10px);
+}
+
+@keyframes hologram-scan {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes hologram-glow {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
