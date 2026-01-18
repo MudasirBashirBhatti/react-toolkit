@@ -93,11 +93,12 @@
 // import styles from "./effects/jobportals/jobMatch.module.css";
 // import styles from "./effects/jobportals/proposalSubmit.module.css";
 // import styles from "./effects/jobportals/moneyTransaction.module.css";
-import styles from "./effects/jobportals/reviewStars.module.css";
+// import styles from "./effects/jobportals/reviewStars.module.css";
+import styles from "./effects/jobportals/milestoneBadgeShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.reviewStars} ${className}`} {...props} />;
+  return <div className={`${styles.milestoneBadge} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
