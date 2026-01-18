@@ -1,0 +1,29 @@
+.hudScanShimmer {
+    position: relative;
+    overflow: hidden;
+    background: #101417;
+}
+
+.hudScanShimmer::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg,
+            transparent,
+            rgba(0, 255, 180, 0.6),
+            transparent);
+    animation: hudScan 1.6s ease-in-out infinite;
+}
+
+@keyframes hudScan {
+    0% {
+        top: -40%;
+    }
+
+    100% {
+        top: 140%;
+    }
+}
