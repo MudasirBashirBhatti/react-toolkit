@@ -1,0 +1,58 @@
+.starfield {
+    position: relative;
+    background: #000000;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.starfield::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ddd, transparent);
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    animation: starfieldMove 100s infinite linear;
+    filter: blur(0.5px);
+}
+
+.starfield::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 50% 50%,
+            transparent 0%,
+            rgba(0, 100, 255, 0.1) 40%,
+            transparent 70%);
+    animation: nebulaPulse 10s infinite ease-in-out;
+}
+
+@keyframes starfieldMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100px, -100px);
+    }
+}
+
+@keyframes nebulaPulse {
+
+    0%,
+    100% {
+        opacity: 0.1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(1.05);
+    }
+}
