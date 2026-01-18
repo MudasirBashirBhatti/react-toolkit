@@ -1,0 +1,68 @@
+.holographicGlitch {
+    background: #151515;
+    position: relative;
+    overflow: hidden;
+}
+
+.holographicGlitch::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 255, 255, 0.1) 20%,
+            rgba(255, 0, 255, 0.2) 40%,
+            rgba(0, 255, 255, 0.1) 60%,
+            transparent 100%);
+    animation: glitch-scan 2s infinite linear;
+}
+
+.holographicGlitch::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(255, 255, 255, 0.05) 2px,
+            rgba(255, 255, 255, 0.05) 4px);
+    animation: glitch-distort 0.1s infinite;
+    opacity: 0;
+}
+
+@keyframes glitch-scan {
+    0% {
+        transform: translateY(-100%) skewY(5deg);
+    }
+
+    100% {
+        transform: translateY(100%) skewY(-5deg);
+    }
+}
+
+@keyframes glitch-distort {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    10% {
+        opacity: 0.1;
+        transform: translateX(-2px);
+    }
+
+    20% {
+        opacity: 0;
+        transform: translateX(2px);
+    }
+
+    30% {
+        opacity: 0.2;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
