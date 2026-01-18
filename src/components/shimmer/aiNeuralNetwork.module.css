@@ -1,0 +1,85 @@
+.aiNeuralNetwork {
+    position: relative;
+    background:
+        linear-gradient(45deg,
+            #0d1b2a 0%,
+            #1b263b 50%,
+            #0d1b2a 100%);
+    background-size: 200% 200%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.aiNeuralNetwork::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 30% 40%,
+            rgba(0, 200, 255, 0.15) 0%,
+            transparent 40%),
+        radial-gradient(circle at 70% 60%,
+            rgba(100, 255, 200, 0.15) 0%,
+            transparent 40%),
+        radial-gradient(circle at 50% 80%,
+            rgba(200, 100, 255, 0.15) 0%,
+            transparent 40%);
+    animation: neuralPulse 6s infinite ease-in-out;
+}
+
+.aiNeuralNetwork::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            #00c8ff,
+            #64ffc8,
+            #c864ff,
+            transparent);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation: neuralConnection 4s infinite linear;
+    filter: blur(2px);
+}
+
+@keyframes neuralPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.02);
+    }
+}
+
+@keyframes neuralConnection {
+    0% {
+        left: -100%;
+        opacity: 0;
+        width: 50px;
+    }
+
+    10% {
+        opacity: 1;
+        width: 100%;
+    }
+
+    90% {
+        opacity: 1;
+        width: 100%;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+        width: 50px;
+    }
+}
