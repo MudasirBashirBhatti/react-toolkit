@@ -1,0 +1,21 @@
+.minimalistPulse {
+    position: relative;
+    overflow: hidden;
+    background: #f8f9fa;
+    border-radius: 8px;
+    animation: subtlePulse 2s infinite ease-in-out;
+}
+
+@keyframes subtlePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        background-color: #f8f9fa;
+    }
+
+    50% {
+        opacity: 0.9;
+        background-color: #e9ecef;
+    }
+}

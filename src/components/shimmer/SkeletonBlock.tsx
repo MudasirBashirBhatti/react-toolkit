@@ -96,12 +96,13 @@
 // import styles from "./effects/jobportals/reviewStars.module.css";
 // import styles from "./effects/jobportals/milestoneBadgeShimmer.module.css";
 // import styles from "./effects/jobportals/professionalWave.module.css";
-import styles from "./effects/jobportals/corporateStripe.module.css";
+// import styles from "./effects/jobportals/corporateStripe.module.css";
+import styles from "./effects/jobportals/minimalistPulse.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.corporateStripe} ${className}`} {...props} />
+    <div className={`${styles.minimalistPulse} ${className}`} {...props} />
   );
 };
 
