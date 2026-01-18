@@ -1,0 +1,93 @@
+.historyTimeline {
+    position: relative;
+    background: linear-gradient(135deg, #f5e6ca 0%, #e8d9b5 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #d4b483;
+}
+
+.historyTimeline::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            #6c757d 0%,
+            #6c757d 100%);
+    top: 50%;
+    left: 10%;
+}
+
+.historyTimeline::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            #dc3545 0%,
+            #fd7e14 50%,
+            #28a745 100%);
+    top: 50%;
+    left: 10%;
+    animation: timelineProgress 4s infinite linear;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.3);
+}
+
+.historyTimeline .timeline-marker {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #28a745;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: markerAppear 4s infinite;
+    left: var(--marker-pos, 10%);
+}
+
+@keyframes timelineProgress {
+    0% {
+        width: 0%;
+    }
+
+    25% {
+        width: 25%;
+        --marker-pos: 25%;
+    }
+
+    50% {
+        width: 50%;
+        --marker-pos: 50%;
+    }
+
+    75% {
+        width: 75%;
+        --marker-pos: 75%;
+    }
+
+    100% {
+        width: 80%;
+        --marker-pos: 80%;
+    }
+}
+
+@keyframes markerAppear {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateY(-50%) scale(0);
+        opacity: 0;
+    }
+
+    25%,
+    45%,
+    65%,
+    85%,
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+}
