@@ -1,0 +1,80 @@
+.jobMatch {
+    position: relative;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #ffcccc;
+}
+
+.jobMatch::before {
+    content: "👤";
+    position: absolute;
+    font-size: 40px;
+    left: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: profileMove 3s infinite ease-in-out;
+}
+
+.jobMatch::after {
+    content: "💼";
+    position: absolute;
+    font-size: 40px;
+    right: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: jobMove 3s infinite ease-in-out;
+}
+
+.jobMatch .match-sparkle {
+    position: absolute;
+    font-size: 20px;
+    color: #ff6b6b;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: matchSparkle 3s infinite;
+}
+
+@keyframes profileMove {
+
+    0%,
+    100% {
+        left: 30%;
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        left: 45%;
+        transform: translateY(-50%) scale(1.2);
+    }
+}
+
+@keyframes jobMove {
+
+    0%,
+    100% {
+        right: 30%;
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        right: 45%;
+        transform: translateY(-50%) scale(1.2);
+    }
+}
+
+@keyframes matchSparkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}

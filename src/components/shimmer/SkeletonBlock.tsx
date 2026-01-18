@@ -89,13 +89,12 @@
 // job portals shimmer effects
 // import styles from "./effects/jobportals/resumeUpload.module.css";
 // import styles from "./effects/jobportals/skillTags.module.css";
-import styles from "./effects/jobportals/connectionNetwork.module.css";
+// import styles from "./effects/jobportals/connectionNetwork.module.css";
+import styles from "./effects/jobportals/jobMatch.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return (
-    <div className={`${styles.connectionNetwork} ${className}`} {...props} />
-  );
+  return <div className={`${styles.jobMatch} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
