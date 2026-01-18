@@ -1,0 +1,55 @@
+.plasmaEnergyShimmer {
+    background: radial-gradient(circle at center, #1a0033 0%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.plasmaEnergyShimmer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%,
+            rgba(255, 0, 255, 0.2) 0%,
+            transparent 30%),
+        radial-gradient(circle at 70% 70%,
+            rgba(0, 255, 255, 0.2) 0%,
+            transparent 30%);
+    animation: plasma-pulse 3s infinite alternate;
+}
+
+.plasmaEnergyShimmer::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(from 0deg,
+            transparent,
+            #ff00ff,
+            #00ffff,
+            #ff00ff,
+            transparent);
+    animation: plasma-rotate 4s infinite linear;
+    filter: blur(20px);
+    opacity: 0.5;
+}
+
+@keyframes plasma-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+@keyframes plasma-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
