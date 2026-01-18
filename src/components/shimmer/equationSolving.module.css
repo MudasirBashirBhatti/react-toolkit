@@ -1,0 +1,58 @@
+.mathSolving {
+    position: relative;
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #ffecb5;
+    font-family: 'Cambria Math', serif;
+}
+
+.mathSolving::before {
+    content: "2x + 3 = 11";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #856404;
+    opacity: var(--step1, 1);
+    animation: equationStep1 6s infinite;
+}
+
+.mathSolving::after {
+    content: "x = 4";
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #155724;
+    opacity: var(--step2, 0);
+    animation: equationStep2 6s infinite;
+}
+
+@keyframes equationStep1 {
+
+    0%,
+    40% {
+        --step1: 1;
+    }
+
+    50%,
+    100% {
+        --step1: 0;
+    }
+}
+
+@keyframes equationStep2 {
+
+    0%,
+    40% {
+        --step2: 0;
+    }
+
+    50%,
+    100% {
+        --step2: 1;
+    }
+}
