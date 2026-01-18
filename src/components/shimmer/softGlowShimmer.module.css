@@ -1,0 +1,28 @@
+.softGlowShimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+}
+
+.softGlowShimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    filter: blur(12px);
+    animation: glowSweep 1.8s infinite linear;
+}
+
+@keyframes glowSweep {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
