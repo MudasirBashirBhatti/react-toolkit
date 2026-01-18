@@ -106,12 +106,13 @@
 // import styles from "./effects/jobportals/subtlePattern.module.css";
 // import styles from "./effects/jobportals/dashboardEffect.module.css";
 // import styles from "./effects/jobportals/profileCardLoading.module.css";
-import styles from "./effects/jobportals/listItemShimmer.module.css";
+// import styles from "./effects/jobportals/listItemShimmer.module.css";
+import styles from "./effects/jobportals/modernGridShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.listItemShimmer} ${className}`} {...props} />
+    <div className={`${styles.modernGridShimmer} ${className}`} {...props} />
   );
 };
 

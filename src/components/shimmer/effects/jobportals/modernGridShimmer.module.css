@@ -1,0 +1,21 @@
+.modernGridShimmer {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, #f8f9fa 1px, transparent 1px),
+        linear-gradient(#f8f9fa 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    animation: gridMove 3s infinite linear;
+}
+
+@keyframes gridMove {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 20px 20px;
+    }
+}
