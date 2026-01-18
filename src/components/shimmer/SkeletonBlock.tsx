@@ -54,15 +54,13 @@
 // import styles from "./quantumCollapse.module.css";
 // import styles from "./dataDecryption.module.css";
 // import styles from "./thoughtProcess.module.css";
-import styles from "./holographicReconstruct.module.css";
+// import styles from "./holographicReconstruct.module.css";
+import styles from "./neuralActivation.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div
-      className={`${styles.holographicReconstruct} ${className}`}
-      {...props}
-    />
+    <div className={`${styles.neuralActivation} ${className}`} {...props} />
   );
 };
 
