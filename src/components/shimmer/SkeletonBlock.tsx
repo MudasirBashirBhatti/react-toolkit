@@ -11,11 +11,12 @@
 // import styles from "./flickerShimmer.module.css";
 
 // gradient shimmers
-import styles from "./blueGradientShimmer.module.css";
+// import styles from "./blueGradientShimmer.module.css";
+import styles from "./rainbowGradientShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.blueShimmer} ${className}`} {...props} />;
+  return <div className={`${styles.rainbowShimmer} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;

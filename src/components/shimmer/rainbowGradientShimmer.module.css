@@ -1,0 +1,36 @@
+.rainbowShimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    /* neutral base */
+}
+
+
+.rainbowShimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -200%;
+    width: 400%;
+    /* bigger to cover full parent until repeat */
+    height: 100%;
+    background: linear-gradient(90deg,
+            red 0%,
+            orange 20%,
+            yellow 40%,
+            green 60%,
+            blue 80%,
+            violet 100%);
+    animation: rainbowMove 2s linear infinite alternate-reverse;
+}
+
+@keyframes rainbowMove {
+    0% {
+        left: -200%;
+    }
+
+    100% {
+        left: 0%;
+    }
+
+}
