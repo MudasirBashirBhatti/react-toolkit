@@ -59,11 +59,14 @@
 // import styles from "./quantumTeleportation.module.css";
 // import styles from "./dataCompression.module.css";
 // import styles from "./aiLearning.module.css";
-import styles from "./hologramDecode.module.css";
+// import styles from "./hologramDecode.module.css";
+import styles from "./chromaticShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.hologramDecode} ${className}`} {...props} />;
+  return (
+    <div className={`${styles.chromaticShimmer} ${className}`} {...props} />
+  );
 };
 
 export default SkeletonBlock;
