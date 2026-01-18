@@ -1,0 +1,29 @@
+.multiShimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+.multiShimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -200%;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0px,
+            rgba(255, 255, 255, 0.2) 40px,
+            rgba(255, 255, 255, 0) 80px);
+    animation: multiShimmerMove 2s linear infinite;
+}
+
+@keyframes multiShimmerMove {
+    0% {
+        left: -200%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
