@@ -1,0 +1,88 @@
+.holographicReconstruct {
+    position: relative;
+    background: rgba(0, 20, 40, 0.8);
+    overflow: hidden;
+    border-radius: 12px;
+    perspective: 1000px;
+}
+
+.holographicReconstruct::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 20px;
+    background: rgba(0, 255, 255, 0.3);
+    top: 40%;
+    left: 10%;
+    animation: layerBuild 3s infinite steps(10);
+    transform-style: preserve-3d;
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.5),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.holographicReconstruct::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 100%);
+    animation: reconstructScan 3s infinite linear;
+}
+
+@keyframes layerBuild {
+    0% {
+        height: 0;
+        top: 50%;
+        opacity: 0;
+    }
+
+    10% {
+        height: 20px;
+        top: 40%;
+        opacity: 1;
+    }
+
+    20% {
+        height: 40px;
+        top: 35%;
+        opacity: 1;
+    }
+
+    30% {
+        height: 60px;
+        top: 30%;
+        opacity: 1;
+    }
+
+    40% {
+        height: 80px;
+        top: 25%;
+        opacity: 1;
+    }
+
+    50% {
+        height: 100px;
+        top: 20%;
+        opacity: 1;
+    }
+
+    100% {
+        height: 100px;
+        top: 20%;
+        opacity: 1;
+    }
+}
+
+@keyframes reconstructScan {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
