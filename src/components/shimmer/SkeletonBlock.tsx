@@ -52,11 +52,12 @@
 // import styles from "./starFieldShimmer.module.css";
 // import styles from "./neuralPathway.module.css";
 // import styles from "./quantumCollapse.module.css";
-import styles from "./dataDecryption.module.css";
+// import styles from "./dataDecryption.module.css";
+import styles from "./thoughtProcess.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.dataDecryption} ${className}`} {...props} />;
+  return <div className={`${styles.thoughtProcess} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
