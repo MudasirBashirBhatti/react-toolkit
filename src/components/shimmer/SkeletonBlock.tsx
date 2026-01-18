@@ -104,12 +104,12 @@
 // import styles from "./effects/jobportals/professionalFade.module.css";
 // import styles from "./effects/jobportals/corporateLayerd.module.css";
 // import styles from "./effects/jobportals/subtlePattern.module.css";
-import styles from "./effects/jobportals/businessCardShimmer.module.css";
+import styles from "./effects/jobportals/dashboardEffect.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
   return (
-    <div className={`${styles.businessCardShimmer} ${className}`} {...props} />
+    <div className={`${styles.dashboardShimmer} ${className}`} {...props} />
   );
 };
 
