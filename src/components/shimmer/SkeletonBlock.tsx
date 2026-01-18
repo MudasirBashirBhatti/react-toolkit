@@ -63,11 +63,12 @@
 // import styles from "./chromaticShimmer.module.css";
 // import styles from "./liquidMercury.module.css";
 // import styles from "./bioluminescent.module.css";
-import styles from "./quantumFoamShimmer.module.css";
+// import styles from "./quantumFoamShimmer.module.css";
+import styles from "./auroraBorealis.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.quantumFoam} ${className}`} {...props} />;
+  return <div className={`${styles.auroraBorealis} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
