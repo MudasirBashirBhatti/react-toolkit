@@ -1,0 +1,76 @@
+.quantumTeleport {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.quantumTeleport::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #00ff88 0%, transparent 70%);
+    top: 30%;
+    left: 20%;
+    animation: teleportSource 3s infinite;
+    filter: blur(5px);
+    box-shadow: 0 0 30px #00ff88;
+}
+
+.quantumTeleport::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff0088 0%, transparent 70%);
+    top: 30%;
+    left: 70%;
+    animation: teleportDest 3s infinite;
+    filter: blur(5px);
+    box-shadow: 0 0 30px #ff0088;
+}
+
+@keyframes teleportSource {
+
+    0%,
+    40%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    45%,
+    55% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    60% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes teleportDest {
+
+    0%,
+    40% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    45%,
+    55% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    60%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
