@@ -43,12 +43,12 @@
 // import styles from "./holographicGlitchShimmer.module.css";
 
 // next gen effects
-import styles from "./quantumEntanglementShimmer.module.css";
+// import styles from "./quantumEntanglementShimmer.module.css";
+import styles from "./neuralMatrixGridShimmer.module.css";
+
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return (
-    <div className={`${styles.quantumEntanglement} ${className}`} {...props} />
-  );
+  return <div className={`${styles.neuralMatrix} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;

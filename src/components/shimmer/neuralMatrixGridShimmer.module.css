@@ -1,0 +1,83 @@
+.neuralMatrix {
+    position: relative;
+    background:
+        linear-gradient(45deg,
+            #000814 0%,
+            #001d3d 25%,
+            #003566 50%,
+            #001d3d 75%,
+            #000814 100%);
+    background-size: 400% 400%;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.neuralMatrix::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 255, 255, 0.05) 1px,
+            transparent 1px),
+        linear-gradient(0deg,
+            rgba(0, 255, 255, 0.05) 1px,
+            transparent 1px);
+    background-size: 40px 40px;
+    animation: matrixShift 20s infinite linear;
+}
+
+.neuralMatrix::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            #00ffff,
+            #00ff88,
+            #00ffff,
+            transparent);
+    top: 0;
+    left: -100%;
+    animation: matrixScan 3s infinite ease-in-out;
+    filter: blur(1px);
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ff88;
+}
+
+@keyframes matrixShift {
+    0% {
+        background-position: 0 0;
+        opacity: 0.3;
+    }
+
+    50% {
+        background-position: 40px 40px;
+        opacity: 0.6;
+    }
+
+    100% {
+        background-position: 0 0;
+        opacity: 0.3;
+    }
+}
+
+@keyframes matrixScan {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+
+    20%,
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
