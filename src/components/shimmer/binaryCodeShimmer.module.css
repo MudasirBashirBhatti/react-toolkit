@@ -1,10 +1,10 @@
-.skeletoninary {
+.skeletonBinary {
     background: #111827;
     position: relative;
     overflow: hidden;
 }
 
-.skeletoninary::before {
+.skeletonBinary::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -16,7 +16,7 @@
     animation: binary-bg 6s infinite ease-in-out;
 }
 
-.skeletoninary::after {
+.skeletonBinary::after {
     content: "0101010101010101";
     position: absolute;
     top: -100%;
