@@ -1,0 +1,29 @@
+.diagonalGlow {
+    position: relative;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+.diagonalGlow::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.25) 50%,
+            rgba(255, 255, 255, 0) 70%);
+    animation: diagonalGlowMove 2s infinite;
+}
+
+@keyframes diagonalGlowMove {
+    0% {
+        transform: translate(-100%, -100%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(100%, 100%) rotate(0deg);
+    }
+}
