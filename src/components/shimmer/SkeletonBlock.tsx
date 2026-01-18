@@ -91,11 +91,14 @@
 // import styles from "./effects/jobportals/skillTags.module.css";
 // import styles from "./effects/jobportals/connectionNetwork.module.css";
 // import styles from "./effects/jobportals/jobMatch.module.css";
-import styles from "./effects/jobportals/proposalSubmit.module.css";
+// import styles from "./effects/jobportals/proposalSubmit.module.css";
+import styles from "./effects/jobportals/moneyTransaction.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.proposalSubmit} ${className}`} {...props} />;
+  return (
+    <div className={`${styles.moneyTransaction} ${className}`} {...props} />
+  );
 };
 
 export default SkeletonBlock;
