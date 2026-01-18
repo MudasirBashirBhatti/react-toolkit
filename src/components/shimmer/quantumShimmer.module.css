@@ -1,0 +1,54 @@
+.skeletonQuantum {
+    background: #0d1117;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeletonQuantum::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(0, 247, 255, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 75% 75%, rgba(255, 0, 255, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 50% 10%, rgba(0, 255, 140, 0.1) 2px, transparent 3px);
+    background-size: 50px 50px;
+    animation: quantum-dots 4s infinite linear;
+}
+
+.skeletonQuantum::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 247, 255, 0.1) 45%,
+            rgba(0, 247, 255, 0.3) 50%,
+            rgba(0, 247, 255, 0.1) 55%,
+            transparent 100%);
+    animation: quantum-wave 3s infinite ease-in-out;
+}
+
+@keyframes quantum-dots {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+@keyframes quantum-wave {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scaleX(0.8);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scaleX(1.2);
+    }
+}
