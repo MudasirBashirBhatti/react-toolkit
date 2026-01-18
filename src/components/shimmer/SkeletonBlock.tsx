@@ -21,13 +21,12 @@
 // futuristic shimmers
 // import styles from "./dotMatrixShimmer.module.css";
 // import styles from "./neonCircutShimmer.module.css";
-import styles from "./pulseLineShimmer.module.css";
+// import styles from "./pulseLineShimmer.module.css";
+import styles from "./holoShimmer.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return (
-    <div className={`${styles.pulseLineShimmer} ${className}`} {...props} />
-  );
+  return <div className={`${styles.holoShimmer} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
