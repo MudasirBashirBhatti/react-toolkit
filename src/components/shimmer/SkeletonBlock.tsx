@@ -79,11 +79,12 @@
 // import styles from "./equationSolving.module.css";
 // import styles from "./historyTimeline.module.css";
 // import styles from "./artBrush.module.css";
-import styles from "./musicNotesFlow.module.css";
+// import styles from "./musicNotesFlow.module.css";
+import styles from "./sportsActivity.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.musicNotes} ${className}`} {...props} />;
+  return <div className={`${styles.sportsActivity} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;

@@ -1,0 +1,55 @@
+.sportsActivity {
+    position: relative;
+    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #abdde5;
+}
+
+.sportsActivity::before {
+    content: "🏃";
+    position: absolute;
+    font-size: 32px;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: runningTrack 3s infinite linear;
+}
+
+.sportsActivity::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg,
+            transparent 0px,
+            transparent 10px,
+            #17a2b8 10px,
+            #17a2b8 20px);
+    top: 70%;
+    left: 10%;
+}
+
+@keyframes runningTrack {
+    0% {
+        left: -50px;
+        transform: translateY(-50%) scaleX(1);
+    }
+
+    25% {
+        transform: translateY(-50%) scaleX(1) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-50%) scaleX(1) rotate(5deg);
+    }
+
+    75% {
+        transform: translateY(-50%) scaleX(-1) rotate(0deg);
+    }
+
+    100% {
+        left: 100%;
+        transform: translateY(-50%) scaleX(-1);
+    }
+}
