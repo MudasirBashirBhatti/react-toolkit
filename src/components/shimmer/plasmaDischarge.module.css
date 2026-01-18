@@ -1,0 +1,89 @@
+.plasmaDischarge {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.plasmaDischarge::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            #ff0000 10%,
+            #ff5500 20%,
+            #ffff00 30%,
+            #00ff00 40%,
+            #00ffff 50%,
+            #0000ff 60%,
+            #ff00ff 70%,
+            #ff0000 80%,
+            transparent 100%);
+    top: 30%;
+    animation: plasmaArc 2s infinite linear;
+    filter: blur(3px) brightness(2);
+    box-shadow:
+        0 0 20px #ff0000,
+        0 0 40px #00ffff;
+}
+
+.plasmaDischarge::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+    animation: plasmaGlow 3s infinite alternate;
+}
+
+@keyframes plasmaArc {
+    0% {
+        left: -100%;
+        opacity: 0;
+        transform: translateY(0) scaleX(1);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(-10px) scaleX(1.2);
+    }
+
+    20% {
+        transform: translateY(10px) scaleX(0.8);
+    }
+
+    30% {
+        transform: translateY(-5px) scaleX(1.1);
+    }
+
+    40% {
+        transform: translateY(5px) scaleX(0.9);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(0) scaleX(1);
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+        transform: translateY(0) scaleX(1);
+    }
+}
+
+@keyframes plasmaGlow {
+    0% {
+        opacity: 0.1;
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        opacity: 0.4;
+        filter: hue-rotate(360deg);
+    }
+}
