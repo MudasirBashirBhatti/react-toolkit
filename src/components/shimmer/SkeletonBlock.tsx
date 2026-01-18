@@ -83,11 +83,12 @@
 // import styles from "./sportsActivity.module.css";
 // import styles from "./graduationCap.module.css";
 // import styles from "./libraryBooks.module.css";
-import styles from "./classroomChalkboard.module.css";
+// import styles from "./classroomChalkboard.module.css";
+import styles from "./computerBinary.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.chalkboard} ${className}`} {...props} />;
+  return <div className={`${styles.computerBinary} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
