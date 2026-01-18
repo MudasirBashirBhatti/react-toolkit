@@ -84,11 +84,15 @@
 // import styles from "./graduationCap.module.css";
 // import styles from "./libraryBooks.module.css";
 // import styles from "./classroomChalkboard.module.css";
-import styles from "./computerBinary.module.css";
+// import styles from "./computerBinary.module.css";
+
+// job portals shimmer effects
+// import styles from "./effects/jobportals/resumeUpload.module.css";
+import styles from "./effects/jobportals/skillTags.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.computerBinary} ${className}`} {...props} />;
+  return <div className={`${styles.skillTags} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;

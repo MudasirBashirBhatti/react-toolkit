@@ -1,0 +1,104 @@
+.resumeUpload {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.resumeUpload::before {
+    content: "📄";
+    position: absolute;
+    font-size: 40px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: documentBounce 2s infinite ease-in-out;
+}
+
+.resumeUpload::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #00d4aa);
+    bottom: 30%;
+    left: 10%;
+    border-radius: 2px;
+    animation: uploadProgress 3s infinite;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.resumeUpload .progress-text {
+    position: absolute;
+    color: #666;
+    font-size: 14px;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: progressText 3s infinite;
+}
+
+@keyframes documentBounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+@keyframes uploadProgress {
+    0% {
+        width: 0%;
+    }
+
+    20% {
+        width: 25%;
+    }
+
+    40% {
+        width: 50%;
+    }
+
+    60% {
+        width: 75%;
+    }
+
+    80% {
+        width: 90%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes progressText {
+    0% {
+        content: "Preparing...";
+    }
+
+    20% {
+        content: "Uploading 25%";
+    }
+
+    40% {
+        content: "Uploading 50%";
+    }
+
+    60% {
+        content: "Uploading 75%";
+    }
+
+    80% {
+        content: "Processing...";
+    }
+
+    100% {
+        content: "Complete!";
+    }
+}

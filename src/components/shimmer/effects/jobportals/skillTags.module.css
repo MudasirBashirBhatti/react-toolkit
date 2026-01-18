@@ -1,0 +1,67 @@
+.skillTags {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+}
+
+.skillTags::before,
+.skillTags::after,
+.skillTags .tag-3,
+.skillTags .tag-4 {
+    content: "";
+    position: absolute;
+    height: 30px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #6c757d, #adb5bd);
+    animation: tagAppear 4s infinite ease-in-out;
+    opacity: 0;
+}
+
+.skillTags::before {
+    width: 80px;
+    top: 30%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.skillTags::after {
+    width: 100px;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    animation-delay: 0.5s;
+}
+
+.skillTags .tag-3 {
+    width: 60px;
+    top: 50%;
+    left: 30%;
+    background: linear-gradient(90deg, #28a745, #1e7e34);
+    animation-delay: 1s;
+}
+
+.skillTags .tag-4 {
+    width: 90px;
+    top: 60%;
+    left: 60%;
+    background: linear-gradient(90deg, #fd7e14, #e8590c);
+    animation-delay: 1.5s;
+}
+
+@keyframes tagAppear {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    20%,
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
