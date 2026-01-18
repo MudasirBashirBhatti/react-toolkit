@@ -67,11 +67,12 @@
 // import styles from "./auroraBorealis.module.css";
 // import styles from "./plasmaDischarge.module.css";
 // import styles from "./crystalRefraction.module.css";
-import styles from "./stardustNebula.module.css";
+// import styles from "./stardustNebula.module.css";
+import styles from "./fireflySwarm.module.css";
 
 type SkeletonBlockProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 const SkeletonBlock = ({ className, ...props }: SkeletonBlockProps) => {
-  return <div className={`${styles.stardustNebula} ${className}`} {...props} />;
+  return <div className={`${styles.fireflySwarm} ${className}`} {...props} />;
 };
 
 export default SkeletonBlock;
