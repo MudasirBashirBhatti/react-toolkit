@@ -1,0 +1,70 @@
+/* ---------- Wrapper ---------- */
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.avatar {
+    justify-content: center;
+}
+
+.detail {
+    gap: 12px;
+}
+
+/* ---------- Avatar ---------- */
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Sizes */
+.xs {
+    width: 20px;
+    height: 20px;
+}
+
+.sm {
+    width: 28px;
+    height: 28px;
+}
+
+.md {
+    width: 36px;
+    height: 36px;
+}
+
+.lg {
+    width: 44px;
+    height: 44px;
+}
+
+.xl {
+    width: 56px;
+    height: 56px;
+}
+
+.xxl {
+    width: 72px;
+    height: 72px;
+}
+
+/* ---------- Meta ---------- */
+.meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.952);
+}
+
+.email {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.671);
+}
