@@ -26,7 +26,7 @@ import { useInputMask } from "./useInputMask";
  * - setValue: programmatically set expiry
  * - ref: optional ref
  */
-export function useCardExpiryMask(options: {
+export function useCreditCardExpiryMask(options: {
   value?: string;
   defaultValue?: string;
   onChange?: (raw: string, formatted: string) => void;
